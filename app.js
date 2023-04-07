@@ -3,7 +3,7 @@ import mongoose from "mongoose"
 import bodyParser from "body-parser";
 import cors from "cors";
 // routes
-import teamAndPlayerRoutes from "../rest-api/routes/index.js"
+import basketRoutes from "../rest-api/routes/index.js"
 // models
 import Player from "./models/Player.js";
 import Team from "./models/Team.js";
@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 // middleware
-app.use("/api", teamAndPlayerRoutes);
+app.use("/api", basketRoutes);
 
 const db = "basketballdb";
 const uri = `mongodb://localhost:27017/${db}`;
@@ -60,25 +60,3 @@ Team.find()
   .catch(error => {
     console.log(error);
   });
-
-
-router.post("/api/team", (req, res) => {
-  const resource = req.params.resource;
-  const controller = teamAndPlayerRoutes[resource];
-
-  if (teamAndPlayerRoutes == null) {
-    res.status(404).json('Something went wrong. Invalid resource.')
-    return
-  }
-
-  controller.post(req.body)
-    .then(data => {
-      res.json({
-        confirmation: 'success',
-        data: data
-      })
-    })
-    .catch(err => {
-      res.json('Invalid post.')
-    })
-})

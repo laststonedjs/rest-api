@@ -34,3 +34,13 @@ export const createPlayerPost = async (req, res) => {
     res.status(409).json({ message: error.message });
   }
 }
+
+export const updatePlayer = async (req, res) => {
+  const { id: _id } = req.params;
+  const player = req.body;
+
+  if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No team with that ID');
+  const updatedPlayer = await Player.findByIdAndUpdate(_id, { ...player, _id }, { new: true });
+
+  res.json(updatedPlayer);
+}

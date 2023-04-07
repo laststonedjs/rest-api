@@ -35,3 +35,13 @@ export const createTeamPost = async (req, res) => {
     res.status(409).json({ message: error.message });
   }
 }
+
+export const updateTeam = async (req, res) => {
+  const { id: _id } = req.params;
+  const team = req.body;
+
+  if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No team with that ID');
+  const updatedTeam = await Team.findByIdAndUpdate(_id, { ...team, _id }, { new: true });
+
+  res.json(updatedTeam);
+}
