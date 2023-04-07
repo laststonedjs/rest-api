@@ -45,3 +45,14 @@ export const updateTeam = async (req, res) => {
 
   res.json(updatedTeam);
 }
+
+export const deleteTeam = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No team with entered ID, something went wrong.');
+
+  await Team.findByIdAndRemove(id);
+  console.log('Deleted entire team!');
+
+  res.json({ message: 'Team deleted successfully!' });
+}

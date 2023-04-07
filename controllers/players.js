@@ -44,3 +44,14 @@ export const updatePlayer = async (req, res) => {
 
   res.json(updatedPlayer);
 }
+
+export const deletePlayer = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No player with entered ID, something went wrong.');
+
+  await Player.findByIdAndRemove(id);
+  console.log('Deleted player info!');
+
+  res.json({ message: 'Player removed successfully!' });
+}

@@ -8,10 +8,8 @@ import basketRoutes from "../rest-api/routes/index.js"
 import Player from "./models/Player.js";
 import Team from "./models/Team.js";
 
-// import controllers from "../rest-api/controllers";
 
 const app = express() // initialize app
-const router = express.Router();
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
@@ -39,7 +37,7 @@ Team.find()
     console.log("Team info: ")
     console.log(data);
 
-    // Putting all founded teams id's in basketballdb array
+    // Putting all founded teams id's in array 'basketballdb' - (name of database) 
     data.map((d, k) => {
       teamsdb.push(d._id);
     })
