@@ -1,31 +1,15 @@
-// Full Documentation - https://docs.turbo360.co
-const express = require('express')
-const router = express.Router()
+import express from "express";
+// handler functions
+import { getPlayers } from "../controllers/players.js";
+import { getTeams } from "../controllers/teams.js";
 
-/*  This is the home route. It renders the index.mustache page from the views directory.
-  Data is rendered using the Mustache templating engine. For more
-  information, view here: https://mustache.github.io/#demo */
-router.get('/', (req, res) => {
-  res.render('index', { text: 'This is the dynamic data. Open index.js from the routes directory to see.' })
-})
+const router = express.Router();
 
-/*  This route render json data */
-router.get('/json', (req, res) => {
-  res.json({
-    confirmation: 'success',
-    app: process.env.TURBO_APP_ID,
-    data: 'this is a sample json route.'
-  })
-})
+router.get("/player", getPlayers);
+router.get("/team", getTeams);
+// router.post("/", createPost);
+// router.patch("/:id", updatePost);
+// router.delete("/:id", deletePost);
+// router.patch("/:id/likePost", likePost);
 
-/*  This route sends text back as plain text. */
-router.get('/send', (req, res) => {
-  res.send('This is the Send Route')
-})
-
-/*  This route redirects requests to Turbo360. */
-router.get('/redirect', (req, res) => {
-  res.redirect('https://www.turbo360.co/landing')
-})
-
-module.exports = router
+export default router;

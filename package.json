@@ -1,22 +1,26 @@
 {
   "name": "rest-api",
   "version": "0.0.0",
-  "server": false,
   "private": true,
+  "main": "app.js",
+  "type": "module",
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "nodemon app.js",
     "serve": "turbo devserver",
     "test": "",
-    "build": ""
+    "build": "",
+    "reset": "rimraf ./tmp/*"
   },
   "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^7.0.3",
     "turbo360": "^1.8.69",
-    "vertex360": "^0.30.39",
-    "express": "^4.17.1"
+    "vertex360": "^0.30.39"
   },
   "devDependencies": {
     "nodemon": "^2.0.2",
     "rimraf": "^2.6.2"
-  },
-  "format": "vertex"
+  }
 }

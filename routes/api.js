@@ -1,24 +1,36 @@
-// Full Documentation - https://docs.turbo360.co
-const express = require('express')
-const router = express.Router()
+// const express = require('express')
+// const router = express.Router()
+// const turbo = require('turbo360')({ site_id: process.env.TURBO_APP_ID })
 
-/*  This is a sample API route. */
+// const controllers = require('../controllers')
 
-router.get('/:resource', (req, res) => {
-  res.json({
-    confirmation: 'success',
-    resource: req.params.resource,
-    query: req.query // from the url query string
-  })
-})
+// router.get('/:resource', (req, res) => {
+//   const resource = req.params.resource;
+//   const controller = controllers[resource];
 
-router.get('/:resource/:id', (req, res) => {
-  res.json({
-    confirmation: 'success',
-    resource: req.params.resource,
-    id: req.params.id,
-    query: req.query // from the url query string
-  })
-})
+//   if (controller == null) {
+//     res.json({
+//       confirmation: 'fail',
+//       message: 'Invalid Resource.'
+//     })
+//     return
+//   }
+//   // else
+//   controller.get()
+//     .then(data => {
+//       res.json({
+//         confirmation: 'success',
+//         data: data
+//       })
+//     })
+//     .catch(err => {
+//       res.json({
+//         confirmation: 'fail',
+//         data: err.message
+//       })
+//     })
 
-module.exports = router
+
+// })
+
+// module.exports = router

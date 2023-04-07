@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Rockets",
+    "city": "Houston",
+    "conference": "West"
+  },
+  {
+    "name": "Nuggets",
+    "city": "Denver",
+    "conference": "West"
+  },
+  {
+    "name": "Hawks",
+    "city": "Atlanta",
+    "conference": "East"
+  }
+]

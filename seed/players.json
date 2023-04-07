@@ -1,0 +1,23 @@
+[
+  {
+    "firstName": "Anthony",
+    "lastName": "Edwards",
+    "position": "SG/PG",
+    "age": 22,
+    "team": "Minnesota Timberwolves"
+  },
+  {
+    "firstName": "Kevin",
+    "lastName": "Durant",
+    "position": "SG/PF",
+    "age": 34,
+    "team": "Phoenix Suns"
+  },
+  {
+    "firstName": "Luka",
+    "lastName": "Doncic",
+    "position": "PG/SG",
+    "age": 26,
+    "team": "Dallas Mavericks"
+  }
+]
