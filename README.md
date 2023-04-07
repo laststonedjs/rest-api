@@ -14,6 +14,7 @@ $ npm start
 ```
 
 <h4> After that should get response message in the console where are our "Server is successfully running..", something like: </h4>
+
 ```
 [nodemon] restarting due to changes...
 [nodemon] starting `node app.js`
