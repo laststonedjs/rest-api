@@ -22,3 +22,16 @@ export const getTeamById = async (req, res) => {
 
   res.json(updatedTeam);
 }
+
+export const createTeamPost = async (req, res) => {
+  const post = req.body;
+
+  const newTeamPost = new Team(post);
+  try {
+    await newTeamPost.save();
+
+    res.status(201).json(newTeamPost);
+  } catch (error) {
+    res.status(409).json({ message: error.message });
+  }
+}
