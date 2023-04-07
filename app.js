@@ -17,19 +17,23 @@ app.use(cors());
 // middleware
 app.use("/api", teamAndPlayerRoutes);
 
-const uri = "mongodb://localhost:27017/basketballdb";
+const db = "basketballdb";
+const uri = `mongodb://localhost:27017/${db}`;
 const PORT = 4000;
 
+
+// establish connection with MongoDB
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(PORT, () => console.log(`Server is running on port ${PORT}`)))
   .catch((error) => console.log(error));
 
-var teamsdb = [];
 
-// Finding teams of name in the db
-Team.find({ name: "Timberwolves" })
+// Finding teams by name in the db
+let teamsdb = [];
+
+Team.find()
   .then(data => {
-    console.log("Team info:")
+    console.log("Team info: ")
     console.log(data);
 
     // Putting all founded teams id's in basketballdb array
@@ -41,7 +45,7 @@ Team.find({ name: "Timberwolves" })
     // Getting players who are enrolled in any
     // team by filtering players, whose playerId matches with any id in
     // teamsdb (temporary) array
-    Player.find({ firstName: { $in: teamsdb } })
+    Player.find()
       .then(data => {
         console.log("Players in Basketball Database: ")
         console.log(data);
@@ -52,4 +56,4 @@ Team.find({ name: "Timberwolves" })
   })
   .catch(error => {
     console.log(error);
-  })
+  });
