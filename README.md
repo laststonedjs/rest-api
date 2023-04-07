@@ -1,6 +1,4 @@
-# rest-api
-
-This project was built with Turbo 360. To learn more, click here: https://www.turbo360.co
+# Create a REST API with Node.js and MongoDB
 
 ## Instructions
 After cloning into repo, cd to project root directory and install dependencies:
@@ -9,20 +7,11 @@ After cloning into repo, cd to project root directory and install dependencies:
 $ npm install
 ```
 
-To run dev server, install Turbo CLI globally:
+To run server:
 
 ```
-$ sudo npm install turbo-cli -g
+$ npm start
 ```
 
-Then run devserver from project root directory:
-
-```
-$ turbo devserver
-```
-
-To build for production, run build:
-
-```
-$ npm run build
-```
+## Overview
+A solid REST API is the foundation of virtually every modern web application, service and data-driven company or startup. From large multi-national corporation to small garage startup, the core tenets of a well-designed REST API are the same and can be learned in relatively short period of time. In this tutorial series, we construct a simple REST API using Node/Express, Mongo DB. Along the way, we explore the key principles behind REST API design as well as common mistakes and scenarios that developers often struggle with.
