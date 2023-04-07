@@ -23,9 +23,10 @@ Server is running on port 4000
 
 ## Overview
 ```js
-A solid REST API is the foundation of virtually every modern web application, service and data-driven company. 
-From large multi-national corporation to small garage startup, the core tenets of a well-designed REST API are the same 
-and can be learned in relatively short period of time. In this case, I construct a simple REST API using Node/Express, MongoDB. 
-Along the way, we explore the key principles behind REST API design as well as common mistakes and scenarios that devs struggle with.
+A solid REST API is the foundation of virtually every modern web app, service and data-driven company/startup. 
+From large multi-national corporation to small startup, the core tenets of a well-designed REST API are the same 
+and can be learned in relatively short period of time. In this case, I construct a simple REST API 
+using Node/Express, MongoDB. Along the way, we explore the key principles behind REST API design as well as common 
+mistakes and scenarios that developers often struggle with.
 ```
 
