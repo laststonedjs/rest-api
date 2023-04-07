@@ -13,7 +13,7 @@ To run server:
 $ npm start
 ```
 
-### After that should get response message in the console, somethinh like:
+### After that should get response message in the console where are our "Server is successfully running..", something like:
 ```
 [nodemon] restarting due to changes...
 [nodemon] starting `node app.js`
