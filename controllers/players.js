@@ -22,3 +22,15 @@ export const getPlayerById = async (req, res) => {
 
   res.json(updatedPlayer);
 }
+
+export const createPlayerPost = async (req, res) => {
+  const post = req.body;
+  const newPlayerPost = new Player(post);
+  try {
+    await newPlayerPost.save();
+
+    res.status(201).json(newPlayerPost);
+  } catch (error) {
+    res.status(409).json({ message: error.message });
+  }
+}

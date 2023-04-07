@@ -8,7 +8,10 @@ import teamAndPlayerRoutes from "../rest-api/routes/index.js"
 import Player from "./models/Player.js";
 import Team from "./models/Team.js";
 
+// import controllers from "../rest-api/controllers";
+
 const app = express() // initialize app
+const router = express.Router();
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
@@ -57,3 +60,25 @@ Team.find()
   .catch(error => {
     console.log(error);
   });
+
+
+router.post("/api/team", (req, res) => {
+  const resource = req.params.resource;
+  const controller = teamAndPlayerRoutes[resource];
+
+  if (teamAndPlayerRoutes == null) {
+    res.status(404).json('Something went wrong. Invalid resource.')
+    return
+  }
+
+  controller.post(req.body)
+    .then(data => {
+      res.json({
+        confirmation: 'success',
+        data: data
+      })
+    })
+    .catch(err => {
+      res.json('Invalid post.')
+    })
+})
