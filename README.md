@@ -13,6 +13,13 @@ To run server:
 $ npm start
 ```
 
+### After that should get response message in the console, somethinh like:
+```
+[nodemon] restarting due to changes...
+[nodemon] starting `node app.js`
+Server is running on port 4000
+```
+
 ## Overview
 ```js
 A solid REST API is the foundation of virtually every modern web application, service and data-driven company. 
